@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account | Cognifyz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="card">
+        <h1>Create Account</h1>
+        <p class="subtitle">Join the Cognifyz Internship Portal</p>
+
+        <form id="signupForm">
+
+            <div class="field">
+                <input type="text" id="name" placeholder=" ">
+                <label>Full Name</label>
+                <small id="nameError"></small>
+            </div>
+
+            <div class="field">
+                <input type="email" id="email" placeholder=" ">
+                <label>Email Address</label>
+                <small id="emailError"></small>
+            </div>
+
+            <div class="field">
+                <input type="password" id="password" placeholder=" ">
+                <label>Password</label>
+                <small id="passwordError"></small>
+            </div>
+
+            <button type="submit">Create Account</button>
+
+            <p class="success" id="successMsg"></p>
+
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
