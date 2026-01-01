@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;900&family=Inter:wght@300&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    background: #02050a;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #fff;
+    overflow: hidden;
+    transition: background 1s ease;
+}
+
+/* Background Stars */
+.stars-bg {
+    position: absolute;
+    width: 100%; height: 100%;
+    background: radial-gradient(white, rgba(255,255,255,0) 2px) 0 0/50px 50px;
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.core-wrapper {
+    text-align: center;
+    perspective: 1000px;
+}
+
+/* THE INTERACTIVE ORB */
+.orb-container {
+    position: relative;
+    width: 250px; height: 250px;
+    margin: 0 auto 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.orb {
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 30% 30%, #00f2ff, #004dff);
+    box-shadow: 0 0 50px rgba(0, 242, 255, 0.6);
+    transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    z-index: 5;
+}
+
+.pulse-blue { animation: float 4s ease-in-out infinite; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); box-shadow: 0 0 40px rgba(0, 242, 255, 0.5); }
+    50% { transform: translateY(-20px); box-shadow: 0 0 80px rgba(0, 242, 255, 0.8); }
+}
+
+/* Spinning Rings */
+.ring, .ring-outer {
+    position: absolute;
+    border: 2px solid rgba(0, 242, 255, 0.3);
+    border-radius: 50%;
+    animation: rotate 10s linear infinite;
+}
+.ring { width: 180px; height: 180px; border-top-color: transparent; }
+.ring-outer { width: 240px; height: 240px; border-bottom-color: transparent; animation-duration: 15s; }
+
+@keyframes rotate { 100% { transform: rotate(360deg); } }
+
+/* TEXT & BUTTON */
+h1 { font-family: 'Orbitron', sans-serif; font-size: 3rem; letter-spacing: 5px; }
+.cyan-glow { color: #00f2ff; text-shadow: 0 0 15px #00f2ff; }
+
+.data-readout { display: flex; justify-content: center; gap: 30px; margin: 20px 0; font-family: 'Orbitron'; font-size: 14px; color: #888; }
+
+#activate-btn {
+    background: transparent;
+    border: 1px solid #00f2ff;
+    color: #00f2ff;
+    padding: 15px 40px;
+    font-family: 'Orbitron';
+    cursor: pointer;
+    transition: 0.3s;
+    letter-spacing: 2px;
+}
+
+#activate-btn:hover { background: #00f2ff; color: #000; box-shadow: 0 0 30px #00f2ff; }
+
+/* ERROR THEME (TRIGGERED BY JS) */
+.emergency-bg { background: #1a0505; }
+.orb-critical { 
+    background: radial-gradient(circle at 30% 30%, #ff4b2b, #ff0000) !important; 
+    box-shadow: 0 0 80px #ff0000 !important;
+    transform: scale(1.3);
+}

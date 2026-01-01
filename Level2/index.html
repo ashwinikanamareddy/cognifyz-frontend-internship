@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 4 | Neural Core Interface</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body id="system-body">
+
+    <div class="stars-bg"></div>
+
+    <main class="core-wrapper">
+        <div class="orb-container">
+            <div id="neural-orb" class="orb pulse-blue"></div>
+            <div class="ring"></div>
+            <div class="ring-outer"></div>
+        </div>
+
+        <div class="info-panel">
+            <h1 id="core-title">NEURAL <span class="cyan-glow">CORE</span></h1>
+            <p id="system-desc">System Status: <span id="status-mode">LOCKED</span></p>
+            
+            <div class="data-readout">
+                <div class="bit">SYNC: <span id="sync-val">0%</span></div>
+                <div class="bit">TEMP: <span id="temp-val">24°C</span></div>
+            </div>
+
+            <button id="activate-btn">INITIALIZE CORE</button>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
